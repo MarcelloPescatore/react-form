@@ -22,7 +22,7 @@ export default function AppMain() {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <h1>React Blog Form</h1>
       <BlogForm onSubmit={addArticle} />
       <BlogList

@@ -19,7 +19,7 @@ export default function BlogList({ articles, onDelete, onUpdate }) {
     };
 
     return (
-        <div>
+        <div className="list">
             {articles.map((article) => (
                 <div key={article.id} className="blog-item">
                     {editingId === article.id ? (
@@ -37,9 +37,11 @@ export default function BlogList({ articles, onDelete, onUpdate }) {
                             <h3>{article.title}</h3>
                             <p>Author: {article.author}</p>
                             <p>Status: {article.status}</p>
-                            <button onClick={() => handleEdit(article)}>Edit</button>
-                            {/* cancella la modifica */}
-                            <button onClick={() => onDelete(article.id)}>Delete</button>
+                            <div className="buttons">
+                                <button onClick={() => handleEdit(article)}>Edit</button>
+                                {/* cancella la modifica */}
+                                <button onClick={() => onDelete(article.id)}>Delete</button>
+                            </div>
                         </>
                     )}
                 </div>
